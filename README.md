@@ -1,7 +1,3 @@
-
-# SFND_Camera
-SFND_Camera
-=======
 # Sensor Fusion NanoDegree- Camera Course
 Camera is the second course in the Sensor Fusion ND. The purpose of this repo is to provide the exercise code to the students, so that they can practice in local system. 
 
@@ -97,5 +93,31 @@ git push --set-upstream origin <local_branch_name>
 ```
 
 * Next, create a PR and merge the new branch with the remote master.
-	
+## OPENCV installation process : 
 
+* clone the source from the repo:
+'''
+git clone https://github.com/opencv/opencv
+git clone https://github.com/opencv/opencv_contrib
+'''
+* make build folder:
+'''
+mkdir build_opencv
+cd build_opencv
+'''
+* make the code:
+
+'''
+
+cmake -D OPENCV_ENABLE_NONFREE=ON CMAKE_INSTALL_PREFIX = /usr/local OPENCV_EXTRA_MODULES_PATH=/Users/ehsan/opencv_contrib/modules ../opencv
+
+make -j7
+
+sudo make install
+'''
+
+Change the cake file:
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake-modules)
+find_package(OpenCV 4.5.3 REQUIRED)
+
+	
